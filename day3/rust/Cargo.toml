@@ -1,0 +1,11 @@
+[package]
+name = "rust"
+version = "0.1.0"
+authors = ["Luke Konopka <luke@lukekonopka.pl>"]
+edition = "2018"
+
+[dependencies]
+nom = "*"
+itertools = "*"
+smallbitvec = "*"
+png = "*"
