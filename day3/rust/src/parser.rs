@@ -1,5 +1,5 @@
 use nom::types::CompleteStr;
-use super::Rect;
+use super::rect::Rect;
 
 fn is_numeric(c: char) -> bool {
   c >= '0' && c <= '9'
@@ -52,7 +52,7 @@ named!(rect_def<CompleteStr, Rect>,
 
 pub fn parse(input: &str) -> Result<Rect, nom::Err<CompleteStr>> {
   match rect_def(CompleteStr::from(input)) {
-    Ok((comp_str, r)) => Result::Ok(r),
+    Ok((_, r)) => Result::Ok(r),
     Err(err) => Result::Err(err)
   }
 }
